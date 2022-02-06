@@ -1,10 +1,12 @@
 import React from "react";
+import * as Pages from "./components/pages";
 
 const App: React.FC = () => {
   return (
-    <div>
-      <h1>Journaler</h1>
-    </div>
+    <>
+      <Pages.Home />
+      <Pages.About />
+    </>
   );
 };
 

@@ -1,0 +1,8 @@
+.btn-primary {
+  /* Default */
+  @apply px-4 py-2 rounded bg-orange-700 text-white shadow-md ease-out duration-100;
+  /* Hover */
+  @apply hover:bg-orange-600;
+  /* Active */
+  @apply active:shadow-md active:shadow-orange-800/50;
+}
