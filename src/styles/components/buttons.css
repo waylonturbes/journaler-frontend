@@ -1,8 +1,14 @@
 .btn-primary {
   /* Default */
-  @apply px-4 py-2 rounded bg-orange-700 text-white shadow-md ease-out duration-100;
+  @apply px-4 py-2 bg-teal-400 text-white rounded-lg ease-out duration-200;
   /* Hover */
-  @apply hover:bg-orange-600;
+  @apply hover:bg-teal-500 hover:shadow-teal-300;
   /* Active */
-  @apply active:shadow-md active:shadow-orange-800/50;
+  @apply active:bg-teal-300;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 2px rgb(20 184 166);
+}
+.btn-primary:active {
+  box-shadow: 0 0 7px rgb(20 184 166);
 }

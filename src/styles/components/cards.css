@@ -7,5 +7,5 @@
 
 .banner {
   /* Default */
-  @apply bg-white mx-auto flex-auto py-12 px-10;
+  @apply mx-auto flex-auto py-12 px-10;
 }
