@@ -1,8 +1,12 @@
+#root {
+  @apply h-full flex;
+}
 body {
-  @apply bg-zinc-100;
+  @apply bg-zinc-100 h-full;
 }
 html {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  @apply h-full;
 }

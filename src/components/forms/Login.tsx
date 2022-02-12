@@ -20,8 +20,11 @@ const Login: React.FC = () => {
   };
 
   return (
-    <form className="p-10 flex-auto mx-auto card" onSubmit={handleSubmit}>
-      <div>
+    <form
+      className="card p-10 mx-auto h-fit w-fit flex flex-col"
+      onSubmit={handleSubmit}
+    >
+      <div className="">
         <label htmlFor="username">Username</label>
         <input
           className="input"
@@ -32,7 +35,7 @@ const Login: React.FC = () => {
           onChange={handleInputs}
         />
       </div>
-      <div>
+      <div className="">
         <label htmlFor="password">Password</label>
         <input
           className="input"

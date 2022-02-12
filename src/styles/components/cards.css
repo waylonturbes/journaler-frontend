@@ -1,11 +1,23 @@
 .card {
   /* Default */
-  @apply bg-white mx-auto max-w-md p-4 rounded-xl shadow-lg overflow-hidden text-center;
+  @apply bg-white mx-auto max-w-md p-4 shadow-lg overflow-hidden text-center;
   /* Small */
   @apply sm:max-w-xl;
 }
 
+@media (max-width: 320px) {
+  .card {
+    border-radius: none;
+  }
+}
+
+@media (min-width: 360px) {
+  .card {
+    border-radius: 1rem;
+  }
+}
+
 .banner {
   /* Default */
-  @apply mx-auto flex-auto py-12 px-10;
+  @apply mx-auto min-w-full h-fit py-12 px-10;
 }
