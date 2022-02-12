@@ -21,11 +21,13 @@ const Login: React.FC = () => {
 
   return (
     <form
-      className="card p-10 mx-auto h-fit w-fit flex flex-col"
+      className="auth-form p-10 mx-auto h-fit flex flex-col"
       onSubmit={handleSubmit}
     >
-      <div className="">
-        <label htmlFor="username">Username</label>
+      <div className="pb-2 flex flex-col">
+        <label htmlFor="username" className="text-left text-lg pb-1">
+          Username:
+        </label>
         <input
           className="input"
           type="text"
@@ -35,8 +37,10 @@ const Login: React.FC = () => {
           onChange={handleInputs}
         />
       </div>
-      <div className="">
-        <label htmlFor="password">Password</label>
+      <div className="py-2 flex flex-col">
+        <label htmlFor="password" className="text-left text-lg pb-1">
+          Password:
+        </label>
         <input
           className="input"
           type="text"
@@ -46,8 +50,17 @@ const Login: React.FC = () => {
           onChange={handleInputs}
         />
       </div>
+      <p className="sub-text text-left pb-2">
+        Don't have an account?{" "}
+        <a
+          href="#username"
+          className="text-teal-500 underline underline-offset-2 ease-out duration-100 hover:text-teal-800 hover:drop-shadow-lg shadow-teal-200"
+        >
+          Register here
+        </a>
+      </p>
       <div>
-        <button className="btn-primary">Submit</button>
+        <button className="btn-primary w-full p-3 text-xl">Login</button>
       </div>
     </form>
   );

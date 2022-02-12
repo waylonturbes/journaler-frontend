@@ -1,6 +1,6 @@
 .input {
   /* Default */
-  @apply bg-white rounded-md p-1 border border-stone-400 transition-all ease-out;
+  @apply bg-white w-full rounded-sm p-2 border border-stone-400 transition-all ease-out;
   /* Focus */
-  @apply focus:outline-none focus:ring-2 focus:border-white focus:ring-orange-400;
+  @apply focus:outline-none focus:ring-2 focus:border-white focus:ring-teal-400;
 }

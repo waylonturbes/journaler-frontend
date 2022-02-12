@@ -2,18 +2,17 @@
   /* Default */
   @apply bg-white mx-auto max-w-md p-4 shadow-lg overflow-hidden text-center;
   /* Small */
-  @apply sm:max-w-xl;
+  @apply sm:w-full;
 }
 
-@media (max-width: 320px) {
-  .card {
-    border-radius: none;
-  }
+.auth-form {
+  /* Small */
+  @apply sm:w-7/12;
 }
 
-@media (min-width: 360px) {
-  .card {
-    border-radius: 1rem;
+@media (min-width: 1024px) {
+  .auth-form {
+    width: 36rem;
   }
 }
 
