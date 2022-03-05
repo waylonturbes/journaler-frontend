@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 
 interface Credentials {
   username: string;
@@ -49,7 +50,7 @@ const Login: React.FC = () => {
         Don't have an account? <a href="#username">Register here</a>
       </p>
       <div>
-        <button>Login</button>
+        <Button variant="contained">Login</Button>
       </div>
     </form>
   );
