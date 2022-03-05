@@ -20,16 +20,12 @@ const Login: React.FC = () => {
   };
 
   return (
-    <form
-      className="auth-form p-10 h-fit flex flex-col"
-      onSubmit={handleSubmit}
-    >
-      <div className="pb-2 flex flex-col">
-        <label htmlFor="username" className="text-left text-lg pb-1">
-          <span className="text-red-600">* </span>Username:
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="username">
+          <span>* </span>Username:
         </label>
         <input
-          className="input"
           type="text"
           value={credentials.username}
           id="username"
@@ -37,12 +33,11 @@ const Login: React.FC = () => {
           onChange={handleInputs}
         />
       </div>
-      <div className="pt-2 pb-1 flex flex-col">
-        <label htmlFor="password" className="text-left text-lg pb-1">
-          <span className="text-red-600">* </span>Password:
+      <div>
+        <label htmlFor="password">
+          <span>* </span>Password:
         </label>
         <input
-          className="input"
           type="password"
           value={credentials.password}
           id="password"
@@ -50,17 +45,11 @@ const Login: React.FC = () => {
           onChange={handleInputs}
         />
       </div>
-      <p className="sub-text text-left pb-4">
-        Don't have an account?{" "}
-        <a
-          href="#username"
-          className="text-teal-500 underline underline-offset-2 ease-out duration-100 hover:text-teal-800 hover:drop-shadow-lg shadow-teal-200"
-        >
-          Register here
-        </a>
+      <p>
+        Don't have an account? <a href="#username">Register here</a>
       </p>
       <div>
-        <button className="btn-primary w-full p-3 text-xl">Login</button>
+        <button>Login</button>
       </div>
     </form>
   );
