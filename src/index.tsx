@@ -16,7 +16,15 @@ import "./styles/index.css";
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Container maxWidth="sm" sx={{ minHeight: "100vh" }}>
+      <Container
+        maxWidth="md"
+        sx={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
+      >
         <NavBar />
         <App />
       </Container>
