@@ -17,7 +17,7 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Container
-        maxWidth="md"
+        maxWidth="lg"
         sx={{
           minHeight: "100vh",
           display: "flex",
