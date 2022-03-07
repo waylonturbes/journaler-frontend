@@ -49,13 +49,21 @@ const NavBar: React.FC = () => {
               <Avatar
                 component="image"
                 className="user-icon"
-                sx={{
-                  bgcolor: "primary.main",
-                  color: "common.white",
-                  fontWeight: "500",
-                  height: "46px",
-                  width: "46px",
-                }}
+                sx={[
+                  {
+                    bgcolor: "primary.main",
+                    color: "common.white",
+                    fontWeight: "500",
+                    height: "46px",
+                    width: "46px",
+                    transition: "0.15s",
+                  },
+                  {
+                    "&:hover": {
+                      "box-shadow": "0px 0px 0px 2px #ff5722",
+                    },
+                  },
+                ]}
               >
                 WT
               </Avatar>
