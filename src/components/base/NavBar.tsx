@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { AppBar, Tabs, Tab, Button } from "@mui/material";
+import { AppBar, Tabs, Tab, Avatar, IconButton, Box } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import Brand from "../../assets/brand.svg";
+
 const NavBar: React.FC = () => {
   const [value, setValue] = useState("home");
-
+  const isAuthenticated = true;
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
@@ -32,22 +33,43 @@ const NavBar: React.FC = () => {
         textColor="inherit"
         indicatorColor="secondary"
         aria-label="header nav links"
-        sx={{ p: "8px", backgroundColor: "#3E2B24", borderRadius: "6px" }}
+        sx={{
+          p: "8px",
+          backgroundColor: "#3E2B24",
+          borderRadius: "6px",
+        }}
       >
         <Tab value="home" label="Home" />
         <Tab value="dashboard" label="Dashboard" />
         <Tab value="about" label="About" />
         <Tab value="contact" label="Contact" />
+        {isAuthenticated ? (
+          <Box sx={{ px: "16px", margin: "auto" }}>
+            <IconButton aria-label="user avatar" sx={{ color: "common.white" }}>
+              <Avatar
+                component="image"
+                className="user-icon"
+                sx={{
+                  bgcolor: "primary.main",
+                  color: "common.white",
+                  fontWeight: "500",
+                  height: "46px",
+                  width: "46px",
+                }}
+              >
+                WT
+              </Avatar>
+            </IconButton>
+          </Box>
+        ) : (
+          <Tab
+            value="login"
+            icon={<PersonIcon />}
+            iconPosition="start"
+            label="Login"
+          />
+        )}
       </Tabs>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="large"
-        sx={{ px: "24px", py: "19px", borderRadius: "6px" }}
-        startIcon={<PersonIcon />}
-      >
-        Login
-      </Button>
     </AppBar>
   );
 };
