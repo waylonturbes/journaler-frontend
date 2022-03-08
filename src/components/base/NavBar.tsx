@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { AppBar, Tabs, Tab, Avatar, IconButton, Box } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import Brand from "../../assets/brand.svg";
@@ -39,15 +40,33 @@ const NavBar: React.FC = () => {
           borderRadius: "6px",
         }}
       >
-        <Tab value="home" label="Home" />
-        <Tab value="dashboard" label="Dashboard" />
-        <Tab value="about" label="About" />
-        <Tab value="contact" label="Contact" />
+        <Tab value="home" label="Home" component={Link as any} to={"/"} />
+        <Tab
+          value="dashboard"
+          label="Dashboard"
+          component={Link as any}
+          to={"/dashboard"}
+        />
+        <Tab
+          value="about"
+          label="About"
+          component={Link as any}
+          to={"/about"}
+        />
+        <Tab
+          value="contact"
+          label="Contact"
+          component={Link as any}
+          to={"/contact"}
+        />
+
         {isAuthenticated ? (
           <Box sx={{ px: "16px", margin: "auto" }}>
             {tab === "profile" ? (
               <IconButton
                 onClick={() => setTab("profile")}
+                component={Link as any}
+                to={"/profile"}
                 aria-label="user avatar"
                 sx={{
                   color: "common.white",
@@ -73,6 +92,8 @@ const NavBar: React.FC = () => {
             ) : (
               <IconButton
                 onClick={() => setTab("profile")}
+                component={Link as any}
+                to={"/profile"}
                 aria-label="user avatar"
                 sx={{
                   color: "common.white",
@@ -98,6 +119,8 @@ const NavBar: React.FC = () => {
         ) : (
           <Tab
             value="login"
+            component={Link as any}
+            to={"/auth/login"}
             icon={<PersonIcon />}
             iconPosition="start"
             label="Login"

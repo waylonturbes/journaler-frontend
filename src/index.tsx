@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import { Container } from "@mui/material";
 import { theme } from "./styles/theme/themeOverride";
@@ -15,20 +16,22 @@ import "./styles/index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <Container
-        maxWidth="lg"
-        sx={{
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <NavBar />
-        <App />
-      </Container>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <Container
+          maxWidth="lg"
+          sx={{
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <NavBar />
+          <App />
+        </Container>
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
