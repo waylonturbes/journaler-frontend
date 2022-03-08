@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { AppBar, Tabs, Tab, Avatar, IconButton, Box } from "@mui/material";
+import AvatarButton from "../AvatarButton";
+import { AppBar, Tabs, Tab, Box } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
-import Brand from "../../assets/brand.svg";
+import Brand from "../../../assets/brand.svg";
 
-const NavBar: React.FC = () => {
+const NavBar = () => {
   const [tab, setTab] = useState("home");
   const isAuthenticated = true;
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setTab(newValue);
+  };
+
+  const dummyUser = {
+    email: "jkbowser@att.net",
   };
 
   return (
@@ -59,61 +64,22 @@ const NavBar: React.FC = () => {
           component={Link as any}
           to={"/contact"}
         />
-
         {isAuthenticated ? (
           <Box sx={{ px: "16px", margin: "auto" }}>
             {tab === "profile" ? (
-              <IconButton
-                onClick={() => setTab("profile")}
-                component={Link as any}
-                to={"/profile"}
-                aria-label="user avatar"
-                sx={{
-                  color: "common.white",
-                  transition: "0.16s ease-in",
+              <AvatarButton
+                onClickAction={() => setTab("profile")}
+                styles={{
                   "outline-offset": "-4px",
                   outline: "2px solid #ff5722",
                 }}
-              >
-                <Avatar
-                  component="image"
-                  className="user-icon"
-                  sx={{
-                    bgcolor: "primary.main",
-                    color: "common.white",
-                    fontWeight: "500",
-                    height: "46px",
-                    width: "46px",
-                  }}
-                >
-                  WT
-                </Avatar>
-              </IconButton>
+                userInitial={dummyUser.email[0].toUpperCase()}
+              />
             ) : (
-              <IconButton
-                onClick={() => setTab("profile")}
-                component={Link as any}
-                to={"/profile"}
-                aria-label="user avatar"
-                sx={{
-                  color: "common.white",
-                  transition: "0.16s ease-in",
-                }}
-              >
-                <Avatar
-                  component="image"
-                  className="user-icon"
-                  sx={{
-                    bgcolor: "primary.main",
-                    color: "common.white",
-                    fontWeight: "500",
-                    height: "46px",
-                    width: "46px",
-                  }}
-                >
-                  WT
-                </Avatar>
-              </IconButton>
+              <AvatarButton
+                onClickAction={() => setTab("profile")}
+                userInitial={dummyUser.email[0].toUpperCase()}
+              />
             )}
           </Box>
         ) : (

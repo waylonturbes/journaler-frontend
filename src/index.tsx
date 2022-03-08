@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import { Container } from "@mui/material";
 import { theme } from "./styles/theme/themeOverride";
-import { NavBar } from "./components/base";
+import { NavBar } from "./components/base/NavBar";
 
 // Style Sheets
 import "@fontsource/roboto/300.css";
