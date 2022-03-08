@@ -17,7 +17,6 @@ declare module "@mui/material/styles" {
     md: false;
     lg: false;
     xl: false;
-    mobile: true;
     desktop: true;
   }
 }
@@ -25,8 +24,7 @@ declare module "@mui/material/styles" {
 export const theme = createTheme({
   breakpoints: {
     values: {
-      mobile: 970,
-      desktop: 1100,
+      desktop: 1000,
     },
   },
   palette: {
