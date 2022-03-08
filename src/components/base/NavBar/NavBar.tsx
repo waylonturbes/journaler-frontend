@@ -25,7 +25,7 @@ const NavBar = () => {
         py: "10px",
         height: "94",
         borderRadius: "0px 0px 20px 20px",
-        border: "6px solid primary.dark",
+        border: "6px solid #3E2B24", // color is primary.dark
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",

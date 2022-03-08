@@ -1,19 +1,34 @@
 import { createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
-  interface Theme {
-    status: {
-      danger: string;
-    };
-  }
   interface ThemeOptions {
     status?: {
       danger?: string;
     };
   }
+  interface Theme {
+    status: {
+      danger: string;
+    };
+  }
+  interface BreakpointOverrides {
+    xs: false;
+    sm: false;
+    md: false;
+    lg: false;
+    xl: false;
+    mobile: true;
+    desktop: true;
+  }
 }
 
 export const theme = createTheme({
+  breakpoints: {
+    values: {
+      mobile: 970,
+      desktop: 1100,
+    },
+  },
   palette: {
     primary: {
       main: "#795548",

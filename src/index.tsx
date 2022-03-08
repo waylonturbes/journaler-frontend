@@ -19,7 +19,7 @@ ReactDOM.render(
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <Container
-          maxWidth="lg"
+          maxWidth="desktop"
           sx={{
             minHeight: "100vh",
             display: "flex",
