@@ -25,7 +25,7 @@ const NavBar = () => {
         py: "10px",
         height: "94",
         borderRadius: "0px 0px 20px 20px",
-        border: "6px solid #3E2B24",
+        border: "6px solid primary.dark",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -41,7 +41,7 @@ const NavBar = () => {
         aria-label="header nav links"
         sx={{
           p: "8px",
-          backgroundColor: "#3E2B24",
+          backgroundColor: "primary.dark",
           borderRadius: "6px",
         }}
       >
@@ -71,7 +71,7 @@ const NavBar = () => {
                 onClickAction={() => setTab("profile")}
                 styles={{
                   "outline-offset": "-4px",
-                  outline: "2px solid #ff5722",
+                  outline: "2px solid #ff5722", // color is secondary.main
                 }}
                 userInitial={dummyUser.email[0].toUpperCase()}
               />
