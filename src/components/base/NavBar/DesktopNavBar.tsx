@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import AvatarButton from "../AvatarButton";
 import { AppBar, Tabs, Tab, Box } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
@@ -48,30 +48,30 @@ const DesktopNavBar = (props: NavProps) => {
         onChange={handleChange}
         textColor="inherit"
         indicatorColor="secondary"
-        aria-label="header nav links"
+        aria-label="header navigation links"
         sx={{
           p: "8px",
           backgroundColor: "primary.dark",
           borderRadius: "6px",
         }}
       >
-        <Tab value="home" label="Home" component={Link as any} to={"/"} />
+        <Tab value="home" label="Home" component={NavLink as any} to={"/"} />
         <Tab
           value="dashboard"
           label="Dashboard"
-          component={Link as any}
+          component={NavLink as any}
           to={"/dashboard"}
         />
         <Tab
           value="about"
           label="About"
-          component={Link as any}
+          component={NavLink as any}
           to={"/about"}
         />
         <Tab
           value="contact"
           label="Contact"
-          component={Link as any}
+          component={NavLink as any}
           to={"/contact"}
         />
         {/* This removes the error for unknown tabs */}
@@ -84,7 +84,7 @@ const DesktopNavBar = (props: NavProps) => {
         ) : (
           <Tab
             value="login"
-            component={Link as any}
+            component={NavLink as any}
             to={"/auth/login"}
             icon={<PersonIcon />}
             iconPosition="start"

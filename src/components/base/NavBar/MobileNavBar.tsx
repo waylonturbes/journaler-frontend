@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import AvatarButton from "../AvatarButton";
 import {
   AppBar,
@@ -67,7 +67,7 @@ const MobileNavBar = (props: NavProps) => {
           <Button
             variant="outlined"
             color="secondary"
-            component={Link as any}
+            component={NavLink as any}
             to={"/auth/login"}
             startIcon={<PersonIcon />}
             sx={{
