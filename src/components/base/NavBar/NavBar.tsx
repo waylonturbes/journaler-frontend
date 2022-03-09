@@ -6,7 +6,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import Brand from "../../../assets/brand.svg";
 
 const NavBar = () => {
-  const [tab, setTab] = useState("home");
+  const [tab, setTab] = useState("");
   const isAuthenticated = true;
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setTab(newValue);
@@ -69,7 +69,7 @@ const NavBar = () => {
             {tab === "profile" ? (
               <AvatarButton
                 onClickAction={() => setTab("profile")}
-                styles={{
+                outline={{
                   "outline-offset": "-4px",
                   outline: "2px solid #ff5722", // color is secondary.main
                 }}

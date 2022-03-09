@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import AvatarButton from "../AvatarButton";
 import {
   AppBar,
   Typography,
-  Tabs,
-  Tab,
   Box,
   Toolbar,
   IconButton,
@@ -15,16 +13,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 
 const MobileNavBar = () => {
-  const [tab, setTab] = useState("home");
   const isAuthenticated = true;
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setTab(newValue);
-  };
 
   const dummyUser = {
     email: "jkbowser@att.net",
   };
-  
+
   return (
     <AppBar position="static" sx={{ backgroundColor: "primary.dark" }}>
       <Toolbar
@@ -64,16 +58,23 @@ const MobileNavBar = () => {
             Journaler
           </Typography>
         </Box>
-        <Button
-          variant="outlined"
-          color="secondary"
-          sx={{
-            py: "12.75px",
-            px: "22px",
-          }}
-        >
-          Login
-        </Button>
+        {isAuthenticated ? (
+          <AvatarButton userInitial={dummyUser.email[0].toUpperCase()} />
+        ) : (
+          <Button
+            variant="outlined"
+            color="secondary"
+            component={Link as any}
+            to={"/login"}
+            startIcon={<PersonIcon />}
+            sx={{
+              py: "12.75px",
+              px: "12.75px",
+            }}
+          >
+            Login
+          </Button>
+        )}
       </Toolbar>
     </AppBar>
   );
