@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import AvatarButton from "../AvatarButton";
 import { AppBar, Tabs, Tab, Box } from "@mui/material";
@@ -19,12 +19,6 @@ const DesktopNavBar = (props: NavProps) => {
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setTab(newValue);
   };
-
-  useEffect(() => {
-    if (pathname === "/profile") {
-      setTab("profile");
-    }
-  }, [pathname]);
 
   return (
     <AppBar
@@ -74,9 +68,6 @@ const DesktopNavBar = (props: NavProps) => {
           component={NavLink as any}
           to={"/contact"}
         />
-        {/* This removes the error for unknown tabs */}
-        <Tab value="profile" sx={{ display: "none" }} />
-        <Tab value="logout" sx={{ display: "none" }} />
         {dummyUser.isAuthenticated ? (
           <Box sx={{ px: "16px", margin: "auto" }}>
             <AvatarButton userInitial={dummyUser.email[0].toUpperCase()} />

@@ -16,7 +16,11 @@ const NavBar = () => {
   return (
     <>
       {windowSize === "desktop" ? (
-        <DesktopNavBar pathname={currentPath} dummyUser={dummyUser} />
+        currentPath === "profile" || currentPath === "logout" ? (
+          <DesktopNavBar pathname="home" dummyUser={dummyUser} />
+        ) : (
+          <DesktopNavBar pathname={currentPath} dummyUser={dummyUser} />
+        )
       ) : (
         <MobileNavBar dummyUser={dummyUser} />
       )}
