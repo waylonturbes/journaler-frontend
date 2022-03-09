@@ -66,21 +66,7 @@ const NavBar = () => {
         />
         {isAuthenticated ? (
           <Box sx={{ px: "16px", margin: "auto" }}>
-            {tab === "profile" ? (
-              <AvatarButton
-                onClickAction={() => setTab("profile")}
-                outline={{
-                  "outline-offset": "-4px",
-                  outline: "2px solid #ff5722", // color is secondary.main
-                }}
-                userInitial={dummyUser.email[0].toUpperCase()}
-              />
-            ) : (
-              <AvatarButton
-                onClickAction={() => setTab("profile")}
-                userInitial={dummyUser.email[0].toUpperCase()}
-              />
-            )}
+            <AvatarButton userInitial={dummyUser.email[0].toUpperCase()} />
           </Box>
         ) : (
           <Tab
