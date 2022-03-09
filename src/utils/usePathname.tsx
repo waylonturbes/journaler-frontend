@@ -1,8 +1,23 @@
 import { useLocation } from "react-router-dom";
 
-const usePathname = () => {
+const usePathname = (): string => {
   const location = useLocation();
-  return location.pathname;
+  const { pathname } = location;
+  let path: string = "";
+  if (pathname === "/") {
+    path = "home";
+  } else if (pathname === "/about") {
+    path = "about";
+  } else if (pathname === "/dashboard") {
+    path = "dashboard";
+  } else if (pathname === "/contact") {
+    path = "contact";
+  } else if (pathname === "/auth/login") {
+    path = "login";
+  } else if (pathname === "/auth/logout") {
+    path = "logout";
+  }
+  return path;
 };
 
 export default usePathname;
