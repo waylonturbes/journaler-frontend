@@ -31,8 +31,6 @@ const AvatarButton = ({ userInitial }: AppProps) => {
         }}
       >
         <Avatar
-          component="image"
-          className="user-icon"
           sx={{
             bgcolor: "primary.main",
             color: "common.white",

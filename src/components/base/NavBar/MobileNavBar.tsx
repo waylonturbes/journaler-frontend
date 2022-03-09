@@ -13,14 +13,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 
 const MobileNavBar = () => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   const dummyUser = {
     email: "jkbowser@att.net",
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "primary.dark" }}>
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "primary.dark" }}
+    >
       <Toolbar
         sx={{
           py: "20px",
