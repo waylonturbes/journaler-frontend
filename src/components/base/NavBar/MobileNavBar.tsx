@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import AvatarButton from "../AvatarButton";
 import {
@@ -8,6 +8,7 @@ import {
   Toolbar,
   IconButton,
   Button,
+  SwipeableDrawer,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
@@ -21,6 +22,21 @@ interface NavProps {
 
 const MobileNavBar = (props: NavProps) => {
   const { dummyUser } = props;
+  const [drawer, setDrawer] = useState(false);
+
+  const toggleDrawer =
+    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event &&
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
+
+      setDrawer(open);
+    };
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "primary.dark" }}>
@@ -45,9 +61,17 @@ const MobileNavBar = (props: NavProps) => {
             color="inherit"
             aria-label="menu"
             sx={{ m: "0px" }}
+            onClick={toggleDrawer(true)}
           >
             <MenuIcon fontSize="large" />
           </IconButton>
+          <SwipeableDrawer
+            open={drawer}
+            onClose={toggleDrawer(false)}
+            onOpen={toggleDrawer(true)}
+          >
+            <Typography variant="h4">Testing 123</Typography>
+          </SwipeableDrawer>
           <Typography
             variant="h5"
             component="div"
