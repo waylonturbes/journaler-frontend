@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function getBreakPoint(windowWidth: number) {
   if (windowWidth) {
-    if (windowWidth < 970) {
+    if (windowWidth < 1000) {
       return "sm";
     } else {
       return "desktop";

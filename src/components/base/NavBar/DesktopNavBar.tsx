@@ -5,8 +5,13 @@ import { AppBar, Tabs, Tab, Box } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import Brand from "../../../assets/brand.svg";
 
-const DesktopNavBar = () => {
-  const [tab, setTab] = useState("");
+interface NavProps {
+  initialRoute: string;
+}
+
+const DesktopNavBar = (props: NavProps) => {
+  const { initialRoute } = props;
+  const [tab, setTab] = useState(initialRoute);
   const isAuthenticated = true;
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setTab(newValue);
