@@ -16,6 +16,8 @@ const usePathname = (): string => {
     path = "login";
   } else if (pathname === "/auth/logout") {
     path = "logout";
+  } else {
+    path = pathname;
   }
   return path;
 };

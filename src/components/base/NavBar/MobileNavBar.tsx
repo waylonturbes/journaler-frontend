@@ -68,7 +68,7 @@ const MobileNavBar = (props: NavProps) => {
             variant="outlined"
             color="secondary"
             component={Link as any}
-            to={"/login"}
+            to={"/auth/login"}
             startIcon={<PersonIcon />}
             sx={{
               py: "12.75px",
