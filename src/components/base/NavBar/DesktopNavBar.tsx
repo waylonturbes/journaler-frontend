@@ -5,7 +5,7 @@ import { AppBar, Tabs, Tab, Box } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import Brand from "../../../assets/brand.svg";
 
-const NavBar = () => {
+const DesktopNavBar = () => {
   const [tab, setTab] = useState("");
   const isAuthenticated = true;
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -83,4 +83,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default DesktopNavBar;

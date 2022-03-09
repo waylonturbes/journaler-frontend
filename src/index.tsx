@@ -4,7 +4,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider, styled } from "@mui/material/styles";
 import { theme } from "./styles/theme/themeOverride";
-import { NavBar, MobileNavBar } from "./components/base/NavBar";
+import NavBar from "./components/base/NavBar";
 
 // Style Sheets
 import "@fontsource/roboto/300.css";
@@ -38,7 +38,7 @@ ReactDOM.render(
             justifyContent: "space-between",
           }}
         >
-          <MobileNavBar />
+          <NavBar />
           <App />
         </AppContainer>
       </ThemeProvider>
