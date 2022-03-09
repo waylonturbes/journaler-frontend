@@ -7,13 +7,18 @@ import usePathname from "../../../utils/usePathname";
 const NavBar = () => {
   let windowSize = useWindowSize();
   let currentPath = usePathname();
+  // will be replaced when connected to backend
+  const dummyUser = {
+    email: "jkbowser@att.net",
+    isAuthenticated: true,
+  };
 
   return (
     <>
       {windowSize === "desktop" ? (
-        <DesktopNavBar pathname={currentPath} />
+        <DesktopNavBar pathname={currentPath} dummyUser={dummyUser} />
       ) : (
-        <MobileNavBar />
+        <MobileNavBar dummyUser={dummyUser} />
       )}
     </>
   );

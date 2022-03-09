@@ -12,18 +12,18 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 
-const MobileNavBar = () => {
-  const isAuthenticated = false;
-
-  const dummyUser = {
-    email: "jkbowser@att.net",
+interface NavProps {
+  dummyUser: {
+    email: string;
+    isAuthenticated: boolean;
   };
+}
+
+const MobileNavBar = (props: NavProps) => {
+  const { dummyUser } = props;
 
   return (
-    <AppBar
-      position="static"
-      sx={{ backgroundColor: "primary.dark" }}
-    >
+    <AppBar position="static" sx={{ backgroundColor: "primary.dark" }}>
       <Toolbar
         sx={{
           py: "20px",
@@ -61,7 +61,7 @@ const MobileNavBar = () => {
             Journaler
           </Typography>
         </Box>
-        {isAuthenticated ? (
+        {dummyUser.isAuthenticated ? (
           <AvatarButton userInitial={dummyUser.email[0].toUpperCase()} />
         ) : (
           <Button

@@ -7,18 +7,17 @@ import Brand from "../../../assets/brand.svg";
 
 interface NavProps {
   pathname: string;
+  dummyUser: {
+    email: string;
+    isAuthenticated: boolean;
+  };
 }
 
 const DesktopNavBar = (props: NavProps) => {
-  const { pathname } = props;
+  const { pathname, dummyUser } = props;
   const [tab, setTab] = useState(pathname);
-  const isAuthenticated = true;
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setTab(newValue);
-  };
-
-  const dummyUser = {
-    email: "jkbowser@att.net",
   };
 
   return (
@@ -69,7 +68,7 @@ const DesktopNavBar = (props: NavProps) => {
           component={Link as any}
           to={"/contact"}
         />
-        {isAuthenticated ? (
+        {dummyUser.isAuthenticated ? (
           <Box sx={{ px: "16px", margin: "auto" }}>
             <AvatarButton userInitial={dummyUser.email[0].toUpperCase()} />
           </Box>
