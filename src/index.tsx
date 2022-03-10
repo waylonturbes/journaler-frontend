@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider, styled } from "@mui/material/styles";
 import { theme } from "./styles/theme/themeOverride";
 import NavBar from "./components/base/NavBar";
+import Footer from "./components/base/Footer";
 
 // Style Sheets
 import "@fontsource/roboto/300.css";
@@ -40,6 +41,7 @@ ReactDOM.render(
         >
           <NavBar />
           <App />
+          <Footer />
         </AppContainer>
       </ThemeProvider>
     </BrowserRouter>
