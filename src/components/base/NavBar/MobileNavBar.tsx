@@ -79,7 +79,11 @@ const MobileNavBar = (props: NavProps) => {
             onClose={toggleDrawer(false)}
             onOpen={toggleDrawer(true)}
           >
-            <List component="nav">
+            <List
+              component="nav"
+              onClick={toggleDrawer(false)}
+              onKeyDown={toggleDrawer(false)}
+            >
               <ListItem>
                 <ListItemButton component={NavLink as any} to={"/"}>
                   <ListItemIcon>
