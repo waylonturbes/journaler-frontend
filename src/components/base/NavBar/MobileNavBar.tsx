@@ -79,9 +79,9 @@ const MobileNavBar = (props: NavProps) => {
             onClose={toggleDrawer(false)}
             onOpen={toggleDrawer(true)}
           >
-            <List>
+            <List component="nav">
               <ListItem>
-                <ListItemButton>
+                <ListItemButton component={NavLink as any} to={"/"}>
                   <ListItemIcon>
                     <HomeIcon />
                   </ListItemIcon>
@@ -89,7 +89,7 @@ const MobileNavBar = (props: NavProps) => {
                 </ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton>
+                <ListItemButton component={NavLink as any} to={"/dashboard"}>
                   <ListItemIcon>
                     <DashboardIcon />
                   </ListItemIcon>
@@ -97,7 +97,7 @@ const MobileNavBar = (props: NavProps) => {
                 </ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton>
+                <ListItemButton component={NavLink as any} to={"/about"}>
                   <ListItemIcon>
                     <InfoIcon />
                   </ListItemIcon>
@@ -105,7 +105,7 @@ const MobileNavBar = (props: NavProps) => {
                 </ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton>
+                <ListItemButton component={NavLink as any} to={"/contact"}>
                   <ListItemIcon>
                     <EmailIcon />
                   </ListItemIcon>
