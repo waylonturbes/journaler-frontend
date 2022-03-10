@@ -14,6 +14,7 @@ import {
   ListItemButton,
   ListItemText,
   ListItemIcon,
+  Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
@@ -92,6 +93,7 @@ const MobileNavBar = (props: NavProps) => {
                   <ListItemText primary="Home" />
                 </ListItemButton>
               </ListItem>
+              <Divider />
               <ListItem>
                 <ListItemButton component={NavLink as any} to={"/dashboard"}>
                   <ListItemIcon>
@@ -100,6 +102,7 @@ const MobileNavBar = (props: NavProps) => {
                   <ListItemText primary="Dashboard" />
                 </ListItemButton>
               </ListItem>
+              <Divider />
               <ListItem>
                 <ListItemButton component={NavLink as any} to={"/about"}>
                   <ListItemIcon>
@@ -108,6 +111,7 @@ const MobileNavBar = (props: NavProps) => {
                   <ListItemText primary="About" />
                 </ListItemButton>
               </ListItem>
+              <Divider />
               <ListItem>
                 <ListItemButton component={NavLink as any} to={"/contact"}>
                   <ListItemIcon>
