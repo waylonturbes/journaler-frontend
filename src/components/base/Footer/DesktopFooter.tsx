@@ -48,6 +48,11 @@ const DesktopFooter = () => {
           component={NavLink as any}
           route={"/about"}
         />
+        <CustomListItem
+          text="Contact"
+          component={NavLink as any}
+          route={"/contact"}
+        />
       </List>
     </Box>
   );
