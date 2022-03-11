@@ -22,7 +22,7 @@ interface FooterHeaderProps {
 export const FooterListHeader = (props: FooterHeaderProps) => {
   const { title } = props;
   return (
-    <Typography variant="h6" color="common.white">
+    <Typography variant="h6" color="common.white" sx={{ mb: "8px" }}>
       {title}
     </Typography>
   );

@@ -74,6 +74,11 @@ const DesktopFooter = () => {
           link="https://github.com/waylonturbes/journaler-frontend"
         />
       </List>
+      <Divider
+        orientation="vertical"
+        flexItem
+        sx={{ bgcolor: "common.white" }}
+      />
     </Box>
   );
 };
