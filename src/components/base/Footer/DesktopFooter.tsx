@@ -54,6 +54,32 @@ const DesktopFooter = () => {
           route={"/contact"}
         />
       </List>
+      <Divider
+        orientation="vertical"
+        flexItem
+        sx={{ bgcolor: "common.white" }}
+      />
+      <List component="div" sx={{ p: "20px" }}>
+        <Typography variant="h6" color="common.white">
+          FIND MORE
+        </Typography>
+        <CustomListItem
+          text="Register"
+          component={NavLink as any}
+          route={"/auth/register"}
+        />
+        {/* Dashboard will only be visible when logged in */}
+        <CustomListItem
+          text="Dashboard"
+          component={NavLink as any}
+          route={"/dashboard"}
+        />
+        <CustomListItem
+          text="View Code"
+          component="a"
+          link="https://github.com/waylonturbes/journaler-frontend"
+        />
+      </List>
     </Box>
   );
 };

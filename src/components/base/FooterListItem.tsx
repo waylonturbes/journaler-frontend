@@ -21,8 +21,7 @@ const CustomListItem = (props: CustomListItemProps) => {
     <ListItem sx={{ p: "0px" }}>
       <ListItemButton
         sx={{
-          px: "0px",
-          py: "5px",
+          p: "0px",
           justifyContent: "space-between",
         }}
         component={component}
