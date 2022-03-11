@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, List, Typography, Divider } from "@mui/material";
+import { Box, List, Divider } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import CustomListItem from "../FooterListItem";
+import { FooterListItem, FooterListHeader } from "./CustomFooterComponents";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
@@ -17,16 +17,14 @@ const DesktopFooter = () => {
       }}
     >
       <List component="div" sx={{ p: "20px" }}>
-        <Typography variant="h6" color="common.white">
-          FOLLOW ME
-        </Typography>
-        <CustomListItem
+        <FooterListHeader title="FOLLOW ME" />
+        <FooterListItem
           text="LinkedIn"
           icon={<LinkedInIcon sx={{ color: "common.white" }} />}
           link="https://www.linkedin.com/in/waylon-turbes/"
           component="a"
         />
-        <CustomListItem
+        <FooterListItem
           text="GitHub"
           icon={<GitHubIcon sx={{ color: "common.white" }} />}
           link="https://github.com/waylonturbes"
@@ -39,16 +37,14 @@ const DesktopFooter = () => {
         sx={{ bgcolor: "common.white" }}
       />
       <List component="div" sx={{ p: "20px" }}>
-        <Typography variant="h6" color="common.white">
-          EXPLORE
-        </Typography>
-        <CustomListItem text="Home" component={NavLink as any} route={"/"} />
-        <CustomListItem
+        <FooterListHeader title="EXPLORE" />
+        <FooterListItem text="Home" component={NavLink as any} route={"/"} />
+        <FooterListItem
           text="About"
           component={NavLink as any}
           route={"/about"}
         />
-        <CustomListItem
+        <FooterListItem
           text="Contact"
           component={NavLink as any}
           route={"/contact"}
@@ -60,21 +56,19 @@ const DesktopFooter = () => {
         sx={{ bgcolor: "common.white" }}
       />
       <List component="div" sx={{ p: "20px" }}>
-        <Typography variant="h6" color="common.white">
-          FIND MORE
-        </Typography>
-        <CustomListItem
+        <FooterListHeader title="FIND MORE" />
+        <FooterListItem
           text="Register"
           component={NavLink as any}
           route={"/auth/register"}
         />
         {/* Dashboard will only be visible when logged in */}
-        <CustomListItem
+        <FooterListItem
           text="Dashboard"
           component={NavLink as any}
           route={"/dashboard"}
         />
-        <CustomListItem
+        <FooterListItem
           text="View Code"
           component="a"
           link="https://github.com/waylonturbes/journaler-frontend"

@@ -4,9 +4,10 @@ import {
   ListItemText,
   ListItemButton,
   ListItemIcon,
+  Typography,
 } from "@mui/material";
 
-interface CustomListItemProps {
+interface FooterListItemProps {
   text: string;
   icon?: any;
   link?: string;
@@ -14,7 +15,20 @@ interface CustomListItemProps {
   route?: any;
 }
 
-const CustomListItem = (props: CustomListItemProps) => {
+interface FooterHeaderProps {
+  title: string;
+}
+
+export const FooterListHeader = (props: FooterHeaderProps) => {
+  const { title } = props;
+  return (
+    <Typography variant="h6" color="common.white">
+      {title}
+    </Typography>
+  );
+};
+
+export const FooterListItem = (props: FooterListItemProps) => {
   const { text, icon, link, component, route } = props;
 
   return (
@@ -47,5 +61,3 @@ const CustomListItem = (props: CustomListItemProps) => {
     </ListItem>
   );
 };
-
-export default CustomListItem;
