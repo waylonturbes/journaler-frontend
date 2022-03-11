@@ -1,53 +1,8 @@
 import React from "react";
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemButton,
-  ListItemIcon,
-  Typography,
-} from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { Box, List, Typography } from "@mui/material";
+import CustomListItem from "../FooterListItem";
+// import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-interface CustomListItemProps {
-  text: string;
-  icon: any;
-  link: string;
-}
-
-const CustomListItem = (props: CustomListItemProps) => {
-  const { text, icon, link } = props;
-
-  return (
-    <ListItem sx={{ p: "0px" }}>
-      <ListItemButton
-        sx={{
-          px: "0px",
-          py: "5px",
-          justifyContent: "space-between",
-        }}
-        component="a"
-        href={link}
-        target="_blank"
-      >
-        <ListItemIcon sx={{ minWidth: "auto", marginRight: "10px" }}>
-          {icon}
-        </ListItemIcon>
-        <ListItemText
-          sx={{ minWidth: "10px", display: "flex" }}
-          primary={text}
-          primaryTypographyProps={{
-            fontSize: "1rem",
-            fontWeight: "medium",
-            color: "common.white",
-          }}
-        />
-      </ListItemButton>
-    </ListItem>
-  );
-};
 
 const DesktopFooter = () => {
   return (
