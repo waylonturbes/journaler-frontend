@@ -16,13 +16,10 @@ import "./styles/index.css";
 
 const AppContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("desktop")]: {
-    maxWidth: "1000px",
-    paddingLeft: "30px",
-    paddingRight: "30px",
+    maxWidth: "1200px",
   },
   [theme.breakpoints.down("desktop")]: {
     maxWidth: "100%",
-    padding: "0px",
   },
 }));
 
