@@ -8,12 +8,14 @@ import {
 
 interface CustomListItemProps {
   text: string;
-  icon: any;
-  link: string;
+  icon?: any;
+  link?: string;
+  component: any;
+  route?: any;
 }
 
 const CustomListItem = (props: CustomListItemProps) => {
-  const { text, icon, link } = props;
+  const { text, icon, link, component, route } = props;
 
   return (
     <ListItem sx={{ p: "0px" }}>
@@ -23,13 +25,16 @@ const CustomListItem = (props: CustomListItemProps) => {
           py: "5px",
           justifyContent: "space-between",
         }}
-        component="a"
+        component={component}
+        to={route}
         href={link}
-        target="_blank"
+        target={component === "a" ? "_blank" : "_self"}
       >
-        <ListItemIcon sx={{ minWidth: "auto", marginRight: "10px" }}>
-          {icon}
-        </ListItemIcon>
+        {icon && (
+          <ListItemIcon sx={{ minWidth: "auto", marginRight: "10px" }}>
+            {icon}
+          </ListItemIcon>
+        )}
         <ListItemText
           sx={{ minWidth: "10px", display: "flex" }}
           primary={text}
