@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider, styled } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import { Box } from "@mui/material";
 import { theme } from "./styles/theme/themeOverride";
 import NavBar from "./components/base/NavBar";
 import Footer from "./components/base/Footer";
@@ -14,22 +15,14 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./styles/index.css";
 
-const AppContainer = styled("div")(({ theme }) => ({
-  [theme.breakpoints.up("desktop")]: {
-    maxWidth: "1200px",
-  },
-  [theme.breakpoints.down("desktop")]: {
-    maxWidth: "100%",
-  },
-}));
-
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <AppContainer
+        <Box
           sx={{
             minHeight: "100vh",
+            maxWidth: "1200px",
             margin: "0 auto",
             display: "flex",
             flexDirection: "column",
@@ -39,7 +32,7 @@ ReactDOM.render(
           <NavBar />
           <App />
           <Footer />
-        </AppContainer>
+        </Box>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
