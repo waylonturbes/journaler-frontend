@@ -12,7 +12,7 @@ interface FooterListItemProps {
   icon?: any;
   link?: string;
   component: any;
-  route?: any;
+  route?: string;
 }
 
 interface FooterHeaderProps {
