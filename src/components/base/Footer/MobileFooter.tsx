@@ -14,7 +14,8 @@ const MobileFooter = () => {
         p: "20px",
         backgroundColor: "primary.dark",
         display: "flex",
-        justifyContent: "space-evenly",
+        flexDirection: "column",
+        justifyContent: "center",
       }}
     >
       <Box>
@@ -67,6 +68,37 @@ const MobileFooter = () => {
           link="https://github.com/waylonturbes/journaler-frontend"
         />
       </List>
+      <Divider flexItem sx={{ bgcolor: "common.white", my: "10px" }} />
+      <Box
+        component="div"
+        sx={{
+          p: "10px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
+          aligntContent: "center",
+        }}
+      >
+        <Box component={NavLink as any} to={"/"}>
+          <Box
+            component="img"
+            src={Brand}
+            alt="Journaler logo"
+            sx={{ height: "50px" }}
+          ></Box>
+        </Box>
+        <Typography
+          variant="body1"
+          sx={{
+            fontWeight: 500,
+            color: "common.white",
+            textAlign: "center",
+            marginTop: "10px",
+          }}
+        >
+          Copyright © 2022 Journaler
+        </Typography>
+      </Box>
     </Box>
   );
 };
