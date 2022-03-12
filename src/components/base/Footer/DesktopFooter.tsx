@@ -81,7 +81,8 @@ const DesktopFooter = () => {
         sx={{ bgcolor: "common.white" }}
       />
       <Box
-        component="div"
+        component={NavLink as any}
+        to={"/"}
         sx={{
           p: "20px",
           display: "flex",
