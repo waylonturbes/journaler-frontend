@@ -81,8 +81,7 @@ const DesktopFooter = () => {
         sx={{ bgcolor: "common.white" }}
       />
       <Box
-        component={NavLink as any}
-        to={"/"}
+        component="div"
         sx={{
           p: "20px",
           display: "flex",
@@ -91,12 +90,14 @@ const DesktopFooter = () => {
           aligntContent: "center",
         }}
       >
-        <Box
-          component="img"
-          src={Brand}
-          alt="Journaler logo"
-          sx={{ height: "50px" }}
-        ></Box>
+        <Box component={NavLink as any} to={"/"}>
+          <Box
+            component="img"
+            src={Brand}
+            alt="Journaler logo"
+            sx={{ height: "50px" }}
+          ></Box>
+        </Box>
         <Typography
           variant="body1"
           sx={{ fontWeight: 500, color: "common.white", textAlign: "center" }}
