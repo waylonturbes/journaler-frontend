@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, List, Divider } from "@mui/material";
+import { Box, List, Divider, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { FooterListItem, FooterListHeader } from "./CustomFooterComponents";
+import Brand from "../../../assets/brand.svg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
@@ -13,7 +14,7 @@ const DesktopFooter = () => {
         p: "20px",
         backgroundColor: "primary.dark",
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
       }}
     >
       <List component="div" sx={{ p: "20px" }}>
@@ -79,6 +80,29 @@ const DesktopFooter = () => {
         flexItem
         sx={{ bgcolor: "common.white" }}
       />
+      <Box
+        component="div"
+        sx={{
+          p: "20px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
+          aligntContent: "center",
+        }}
+      >
+        <Box
+          component="img"
+          src={Brand}
+          alt="Journaler logo"
+          sx={{ height: "50px" }}
+        ></Box>
+        <Typography
+          variant="body1"
+          sx={{ fontWeight: 500, color: "common.white", textAlign: "center" }}
+        >
+          Copyright © 2022 Journaler
+        </Typography>
+      </Box>
     </Box>
   );
 };
