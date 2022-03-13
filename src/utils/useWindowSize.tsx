@@ -1,27 +1,12 @@
 import { useState, useEffect } from "react";
 
-function getBreakPoint(windowWidth: number) {
-  if (windowWidth) {
-    if (windowWidth < 1000) {
-      return "sm";
-    } else {
-      return "desktop";
-    }
-  } else {
-    return undefined;
-  }
-}
-
 function useWindowSize() {
-  const isWindowClient = typeof window === "object";
-
-  const [windowSize, setWindowSize] = useState(
-    isWindowClient ? getBreakPoint(window.innerWidth) : undefined
-  );
+  const isWindowClient: {} = window;
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   useEffect(() => {
     function setSize() {
-      setWindowSize(getBreakPoint(window.innerWidth));
+      setWindowSize(window.innerWidth);
     }
 
     if (isWindowClient) {

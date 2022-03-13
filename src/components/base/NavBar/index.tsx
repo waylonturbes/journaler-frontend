@@ -15,7 +15,7 @@ const NavBar = () => {
 
   return (
     <>
-      {windowSize === "desktop" ? (
+      {windowSize === 1000 ? (
         currentPath === "profile" || currentPath === "logout" ? (
           <DesktopNavBar pathname="home" dummyUser={dummyUser} />
         ) : (
