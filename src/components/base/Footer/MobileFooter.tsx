@@ -79,7 +79,15 @@ const MobileFooter = () => {
           aligntContent: "center",
         }}
       >
-        <Box component={NavLink as any} to={"/"}>
+        <Box
+          component={NavLink as any}
+          to={"/"}
+          sx={{
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center",
+          }}
+        >
           <Box
             component="img"
             src={Brand}
