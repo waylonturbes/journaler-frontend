@@ -29,12 +29,14 @@ const DesktopNavBar = (props: NavProps) => {
         alignItems: "center",
       }}
     >
-      <Box
-        component="img"
-        src={Brand}
-        alt="Journaler branding"
-        sx={{ px: "17px" }}
-      />
+      <Box component={NavLink as any} to={"/"}>
+        <Box
+          component="img"
+          src={Brand}
+          alt="Journaler branding"
+          sx={{ px: "17px" }}
+        />
+      </Box>
       <ButtonGroup
         variant="text"
         fullWidth={true}
