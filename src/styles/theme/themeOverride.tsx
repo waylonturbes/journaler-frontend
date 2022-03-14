@@ -11,22 +11,9 @@ declare module "@mui/material/styles" {
       danger: string;
     };
   }
-  interface BreakpointOverrides {
-    xs: false;
-    sm: false;
-    md: false;
-    lg: false;
-    xl: false;
-    desktop: true;
-  }
 }
 
 export const theme = createTheme({
-  breakpoints: {
-    values: {
-      desktop: 1000,
-    },
-  },
   palette: {
     primary: {
       main: "#ff5722",
