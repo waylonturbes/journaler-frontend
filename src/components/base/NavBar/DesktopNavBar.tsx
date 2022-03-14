@@ -19,7 +19,7 @@ const DesktopNavBar = (props: NavProps) => {
     <AppBar
       component="header"
       position="sticky"
-      color="transparent"
+      color="inherit"
       sx={{
         px: "20px",
         py: "10px",
@@ -29,7 +29,13 @@ const DesktopNavBar = (props: NavProps) => {
       }}
     >
       <img src={Brand} alt="Journaler branding" />
-      <ButtonGroup variant="text" aria-label="header navigation links">
+      <ButtonGroup
+        variant="text"
+        fullWidth={true}
+        size="large"
+        aria-label="header navigation links"
+        color="inherit"
+      >
         <Button
           size="large"
           value="home"
