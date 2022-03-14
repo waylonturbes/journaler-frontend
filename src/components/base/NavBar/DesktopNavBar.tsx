@@ -24,17 +24,24 @@ const DesktopNavBar = (props: NavProps) => {
         px: "20px",
         py: "10px",
         display: "flex",
+        flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
       }}
     >
-      <img src={Brand} alt="Journaler branding" />
+      <Box
+        component="img"
+        src={Brand}
+        alt="Journaler branding"
+        sx={{ px: "17px" }}
+      />
       <ButtonGroup
         variant="text"
         fullWidth={true}
         size="large"
         aria-label="header navigation links"
         color="inherit"
+        sx={{ maxWidth: "600px" }}
       >
         <Button
           size="large"
@@ -70,7 +77,7 @@ const DesktopNavBar = (props: NavProps) => {
           CONTACT
         </Button>
         {dummyUser.isAuthenticated ? (
-          <Box sx={{ px: "16px", margin: "auto" }}>
+          <Box sx={{ px: "11px", margin: "auto" }}>
             <AvatarButton userInitial={dummyUser.email[0].toUpperCase()} />
           </Box>
         ) : (
