@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import {
   Box,
   InputLabel,
-  OutlinedInput,
+  FilledInput,
   InputAdornment,
   IconButton,
   FormControl,
   Button,
+  Typography,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -53,6 +54,7 @@ const Login: React.FC = () => {
         display: "flex",
         justifyContent: "center",
         flex: "auto",
+        py: "2rem",
       }}
     >
       <Box
@@ -68,20 +70,22 @@ const Login: React.FC = () => {
         }}
         onSubmit={handleSubmit}
       >
-        <FormControl sx={{ width: "100%" }} variant="outlined">
+        <Typography variant="h5" sx={{ alignSelf: "center" }}>
+          LOGIN
+        </Typography>
+        <FormControl sx={{ width: "100%" }} variant="filled">
           <InputLabel htmlFor="email-input">Email</InputLabel>
-          <OutlinedInput
+          <FilledInput
             id="email-input"
             type="email"
             name="email"
             value={credentials.email}
             onChange={handleInputs}
-            label="email"
           />
         </FormControl>
-        <FormControl sx={{ width: "100%" }} variant="outlined">
+        <FormControl sx={{ width: "100%" }} variant="filled">
           <InputLabel htmlFor="password-input">Password</InputLabel>
-          <OutlinedInput
+          <FilledInput
             id="password-input"
             type={credentials.showPassword ? "text" : "password"}
             name="password"
@@ -103,7 +107,6 @@ const Login: React.FC = () => {
                 </IconButton>
               </InputAdornment>
             }
-            label="Password"
           />
         </FormControl>
         <div>
