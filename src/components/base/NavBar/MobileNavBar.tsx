@@ -49,11 +49,11 @@ const MobileNavBar = (props: NavProps) => {
     };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "primary.dark" }}>
+    <AppBar position="static" sx={{ backgroundColor: "common.white" }}>
       <Toolbar
         sx={{
-          py: "20px",
-          px: "10px",
+          py: "10px",
+          px: "20px",
           display: "flex",
           justifyContent: "space-between",
           aligntItems: "center",
