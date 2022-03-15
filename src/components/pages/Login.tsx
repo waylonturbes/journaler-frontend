@@ -26,11 +26,22 @@ const Login: React.FC = () => {
       sx={{
         display: "flex",
         justifyContent: "center",
-        alignContent: "center",
         flex: "auto",
       }}
     >
-      <Box component="form" onSubmit={handleSubmit}>
+      <Box
+        component="form"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignSelf: "center",
+          alignContent: "center",
+          justifyContent: "space-evenly",
+          minHeight: "400px",
+          maxWidth: "256px",
+        }}
+        onSubmit={handleSubmit}
+      >
         <div>
           <label htmlFor="username">
             <span>* </span>Username:
