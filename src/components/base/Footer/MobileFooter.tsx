@@ -13,7 +13,13 @@ const MobileFooter = () => {
       sx={{
         p: "20px",
         backgroundColor: "common.white",
-        boxShadow: 4,
+        boxShadow: "none",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        borderColor: "grey.400",
+        borderBottom: "none",
+        borderLeft: "none",
+        borderRight: "none",
       }}
     >
       <Box
