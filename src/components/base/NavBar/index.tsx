@@ -8,7 +8,7 @@ const NavBar = () => {
   // will be replaced when connected to backend
   const dummyUser = {
     email: "jkbowser@att.net",
-    isAuthenticated: true,
+    isAuthenticated: false,
   };
 
   return (

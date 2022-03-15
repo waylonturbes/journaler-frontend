@@ -94,7 +94,7 @@ const DesktopNavBar = (props: NavProps) => {
           <Button
             size="large"
             component={NavLink as any}
-            to={"/auth/login"}
+            to={"/login"}
             icon={<PersonIcon />}
             iconPosition="start"
           >

@@ -2,21 +2,20 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import { About, Auth, Home } from "./components/pages";
-
-import * as Pages from "./components/pages";
+import { About, Home, Login } from "./components/pages";
 
 const App: React.FC = () => {
   return (
-    <Box sx={{ flex: "auto" }}>
+    <Box sx={{ display: "flex", flex: "auto" }}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" />
-        <Route path="dashboard" />
-        <Route path="auth" element={<Auth />} />
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" />
+          <Route path="dashboard" />
+          <Route path="login" element={<Login />} />
+        </Route>
       </Routes>
-      <Pages.Auth />
     </Box>
   );
 };
