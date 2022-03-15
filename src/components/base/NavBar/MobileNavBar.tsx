@@ -20,7 +20,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import EmailIcon from "@mui/icons-material/Email";
 import InfoIcon from "@mui/icons-material/Info";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import PersonIcon from "@mui/icons-material/Person";
 import Brand from "../../../assets/brand.svg";
 
 interface NavProps {
@@ -155,10 +154,9 @@ const MobileNavBar = (props: NavProps) => {
         ) : (
           <Button
             variant="outlined"
-            color="secondary"
+            color="primary"
             component={NavLink as any}
-            to={"/auth/login"}
-            startIcon={<PersonIcon />}
+            to={"/login"}
             sx={{
               py: "12.75px",
               px: "12.75px",

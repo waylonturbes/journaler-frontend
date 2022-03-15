@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import AvatarButton from "../AvatarButton";
 import { AppBar, Box, ButtonGroup, Button } from "@mui/material";
-import PersonIcon from "@mui/icons-material/Person";
 import Brand from "../../../assets/brand.svg";
 
 interface NavProps {
@@ -91,13 +90,7 @@ const DesktopNavBar = (props: NavProps) => {
             <AvatarButton userInitial={dummyUser.email[0].toUpperCase()} />
           </Box>
         ) : (
-          <Button
-            size="large"
-            component={NavLink as any}
-            to={"/auth/login"}
-            icon={<PersonIcon />}
-            iconPosition="start"
-          >
+          <Button size="large" component={NavLink as any} to={"/login"}>
             LOGIN
           </Button>
         )}
