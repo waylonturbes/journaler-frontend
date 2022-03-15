@@ -34,6 +34,7 @@ const DesktopNavBar = (props: NavProps) => {
         borderTop: "none",
         borderLeftWidth: { md: "0px", lg: "1px" },
         borderRightWidth: { md: "0px", lg: "1px" },
+        borderRadius: { md: "0px", lg: "0px 0px 8px 8px" },
       }}
     >
       <Box component={NavLink as any} to={"/"}>
