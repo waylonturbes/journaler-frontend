@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import AvatarButton from "../AvatarButton";
-import { AppBar, Tabs, Tab, Box } from "@mui/material";
+import { AppBar, Box, ButtonGroup, Button } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import Brand from "../../../assets/brand.svg";
 
 interface NavProps {
-  pathname: string;
   dummyUser: {
     email: string;
     isAuthenticated: boolean;
@@ -14,75 +13,87 @@ interface NavProps {
 }
 
 const DesktopNavBar = (props: NavProps) => {
-  const { pathname, dummyUser } = props;
-  const [tab, setTab] = useState(pathname);
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setTab(newValue);
-  };
+  const { dummyUser } = props;
 
   return (
     <AppBar
       component="header"
       position="sticky"
+      color="inherit"
       sx={{
         px: "20px",
         py: "10px",
-        height: "94",
-        borderRadius: "0px 0px 20px 20px",
-        border: "6px solid #3E2B24", // color is primary.dark
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
       }}
     >
-      <img src={Brand} alt="Journaler branding" />
-      <Tabs
-        value={tab}
-        onChange={handleChange}
-        textColor="inherit"
-        indicatorColor="secondary"
+      <Box component={NavLink as any} to={"/"}>
+        <Box
+          component="img"
+          src={Brand}
+          alt="Journaler branding"
+          sx={{ px: "17px" }}
+        />
+      </Box>
+      <ButtonGroup
+        variant="text"
+        fullWidth={true}
+        size="large"
         aria-label="header navigation links"
-        sx={{
-          p: "8px",
-          backgroundColor: "primary.dark",
-          borderRadius: "6px",
-        }}
+        color="inherit"
+        sx={{ maxWidth: "600px" }}
       >
-        <Tab value="home" label="Home" component={NavLink as any} to={"/"} />
-        <Tab
+        <Button
+          size="large"
+          value="home"
+          label="Home"
+          component={NavLink as any}
+          to={"/"}
+        >
+          HOME
+        </Button>
+        <Button
+          size="large"
           value="dashboard"
-          label="Dashboard"
           component={NavLink as any}
           to={"/dashboard"}
-        />
-        <Tab
+        >
+          DASHBOARD
+        </Button>
+        <Button
+          size="large"
           value="about"
-          label="About"
           component={NavLink as any}
           to={"/about"}
-        />
-        <Tab
+        >
+          ABOUT
+        </Button>
+        <Button
+          size="large"
           value="contact"
-          label="Contact"
           component={NavLink as any}
           to={"/contact"}
-        />
+        >
+          CONTACT
+        </Button>
         {dummyUser.isAuthenticated ? (
-          <Box sx={{ px: "16px", margin: "auto" }}>
+          <Box sx={{ px: "11px", margin: "auto" }}>
             <AvatarButton userInitial={dummyUser.email[0].toUpperCase()} />
           </Box>
         ) : (
-          <Tab
-            value="login"
+          <Button
+            size="large"
             component={NavLink as any}
             to={"/auth/login"}
             icon={<PersonIcon />}
             iconPosition="start"
-            label="Login"
-          />
+          >
+            LOGIN
+          </Button>
         )}
-      </Tabs>
+      </ButtonGroup>
     </AppBar>
   );
 };

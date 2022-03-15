@@ -11,38 +11,27 @@ declare module "@mui/material/styles" {
       danger: string;
     };
   }
-  interface BreakpointOverrides {
-    xs: false;
-    sm: false;
-    md: false;
-    lg: false;
-    xl: false;
-    desktop: true;
-  }
 }
 
 export const theme = createTheme({
-  breakpoints: {
-    values: {
-      desktop: 1000,
-    },
-  },
   palette: {
     primary: {
-      main: "#795548",
-      dark: "#3E2B24",
-    },
-    secondary: {
       main: "#ff5722",
     },
+    secondary: {
+      main: "#22cbff",
+    },
     error: {
-      main: "#e91e63",
+      main: "#ff225d",
+    },
+    warning: {
+      main: "#ffc422",
     },
     success: {
-      main: "#4caf50",
+      main: "#22ff56",
     },
     info: {
-      main: "#2196f3",
+      main: "#cbff22",
     },
   },
 });
