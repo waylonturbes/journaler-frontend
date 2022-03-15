@@ -15,7 +15,14 @@ const DesktopFooter = () => {
         backgroundColor: "common.white",
         display: "flex",
         justifyContent: "space-evenly",
-        boxShadow: 4,
+        boxShadow: "none",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        borderColor: "grey.400",
+        borderBottom: "none",
+        borderLeftWidth: { md: "0px", lg: "1px" },
+        borderRightWidth: { md: "0px", lg: "1px" },
+        borderRadius: { md: "0px", lg: "8px 8px 0px 0px" },
       }}
     >
       <List component="div" sx={{ p: "20px" }}>
