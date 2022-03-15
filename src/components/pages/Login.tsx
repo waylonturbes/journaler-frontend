@@ -1,15 +1,27 @@
 import React, { useState } from "react";
-import { Box, TextField, FormControl, Button } from "@mui/material";
+import {
+  Box,
+  InputLabel,
+  OutlinedInput,
+  InputAdornment,
+  IconButton,
+  FormControl,
+  Button,
+} from "@mui/material";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 interface Credentials {
-  username: string;
+  email: string;
   password: string;
+  showPassword: boolean;
 }
 
 const Login: React.FC = () => {
   const [credentials, setCredentials] = useState<Credentials>({
-    username: "",
+    email: "",
     password: "",
+    showPassword: false,
   });
 
   const handleInputs = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,6 +29,20 @@ const Login: React.FC = () => {
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Call DB here
+  };
+
+  const handleClickShowPassword = () => {
+    setCredentials({
+      ...credentials,
+      showPassword: !credentials.showPassword,
+    });
+  };
+
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
     event.preventDefault();
   };
 
@@ -37,41 +63,54 @@ const Login: React.FC = () => {
           alignSelf: "center",
           alignContent: "center",
           justifyContent: "space-evenly",
-          minHeight: "400px",
+          minHeight: "300px",
           maxWidth: "256px",
         }}
         onSubmit={handleSubmit}
       >
-        <div>
-          <label htmlFor="username">
-            <span>* </span>Username:
-          </label>
-          <input
-            type="text"
-            value={credentials.username}
-            id="username"
-            name="username"
-            onChange={handleInputs}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">
-            <span>* </span>Password:
-          </label>
-          <input
-            type="password"
-            value={credentials.password}
-            id="password"
+        <label htmlFor="username">
+          <span>* </span>Username:
+        </label>
+        <input
+          type="text"
+          value={credentials.email}
+          id="username"
+          name="username"
+          onChange={handleInputs}
+        />
+        <FormControl sx={{ width: "100%" }} variant="outlined">
+          <InputLabel htmlFor="password-input">Password</InputLabel>
+          <OutlinedInput
+            id="password-input"
+            type={credentials.showPassword ? "text" : "password"}
             name="password"
+            value={credentials.password}
             onChange={handleInputs}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {credentials.showPassword ? (
+                    <VisibilityOff />
+                  ) : (
+                    <Visibility />
+                  )}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
           />
+        </FormControl>
+        <div>
+          <Button variant="contained">Login</Button>
         </div>
         <p>
           Don't have an account? <a href="#username">Register here</a>
         </p>
-        <div>
-          <Button variant="contained">Login</Button>
-        </div>
       </Box>
     </Box>
   );
