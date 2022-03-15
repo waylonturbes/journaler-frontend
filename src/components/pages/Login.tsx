@@ -68,16 +68,17 @@ const Login: React.FC = () => {
         }}
         onSubmit={handleSubmit}
       >
-        <label htmlFor="username">
-          <span>* </span>Username:
-        </label>
-        <input
-          type="text"
-          value={credentials.email}
-          id="username"
-          name="username"
-          onChange={handleInputs}
-        />
+        <FormControl sx={{ width: "100%" }} variant="outlined">
+          <InputLabel htmlFor="email-input">Email</InputLabel>
+          <OutlinedInput
+            id="email-input"
+            type="email"
+            name="email"
+            value={credentials.email}
+            onChange={handleInputs}
+            label="email"
+          />
+        </FormControl>
         <FormControl sx={{ width: "100%" }} variant="outlined">
           <InputLabel htmlFor="password-input">Password</InputLabel>
           <OutlinedInput
