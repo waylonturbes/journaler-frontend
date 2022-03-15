@@ -65,7 +65,7 @@ const Login: React.FC = () => {
           flexDirection: "column",
           alignSelf: "center",
           alignContent: "center",
-          justifyContent: "space-evenly",
+          justifyContent: "space-between",
           minHeight: "300px",
           maxWidth: "256px",
         }}
