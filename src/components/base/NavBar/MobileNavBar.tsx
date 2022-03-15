@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import AvatarButton from "../AvatarButton";
 import {
   AppBar,
-  Typography,
   Box,
   Toolbar,
   IconButton,
@@ -22,6 +21,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import InfoIcon from "@mui/icons-material/Info";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonIcon from "@mui/icons-material/Person";
+import Brand from "../../../assets/brand.svg";
 
 interface NavProps {
   dummyUser: {
@@ -68,9 +68,8 @@ const MobileNavBar = (props: NavProps) => {
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
             aria-label="menu"
-            sx={{ m: "0px" }}
+            sx={{ m: "0px", color: "common.black" }}
             onClick={toggleDrawer(true)}
           >
             <MenuIcon fontSize="large" />
@@ -122,18 +121,22 @@ const MobileNavBar = (props: NavProps) => {
               </ListItem>
             </List>
           </SwipeableDrawer>
-          <Typography
-            variant="h5"
-            component="div"
+          <Box
+            component={NavLink as any}
+            to={"/"}
             sx={{
-              flexGrow: 1,
-              display: "flex",
-              alignItems: "center",
-              paddingLeft: "10px",
+              height: { xs: "30px", sm: "40px" },
+              marginLeft: { xs: "5px", sm: "10px" },
+              alignSelf: "center",
             }}
           >
-            Journaler
-          </Typography>
+            <Box
+              component="img"
+              src={Brand}
+              alt="Journaler logo"
+              sx={{ height: { xs: "30px", sm: "40px" } }}
+            ></Box>
+          </Box>
         </Box>
         {dummyUser.isAuthenticated ? (
           <AvatarButton userInitial={dummyUser.email[0].toUpperCase()} />
