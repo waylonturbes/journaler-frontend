@@ -12,22 +12,30 @@ const DesktopFooter = () => {
       component="footer"
       sx={{
         p: "20px",
-        backgroundColor: "primary.dark",
+        backgroundColor: "common.white",
         display: "flex",
         justifyContent: "space-evenly",
+        boxShadow: "none",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        borderColor: "grey.400",
+        borderBottom: "none",
+        borderLeftWidth: { md: "0px", lg: "1px" },
+        borderRightWidth: { md: "0px", lg: "1px" },
+        borderRadius: { md: "0px", lg: "8px 8px 0px 0px" },
       }}
     >
       <List component="div" sx={{ p: "20px" }}>
         <FooterListHeader title="FOLLOW ME" />
         <FooterListItem
           text="LinkedIn"
-          icon={<LinkedInIcon sx={{ color: "common.white" }} />}
+          icon={<LinkedInIcon sx={{ color: "common.black" }} />}
           link="https://www.linkedin.com/in/waylon-turbes/"
           component="a"
         />
         <FooterListItem
           text="GitHub"
-          icon={<GitHubIcon sx={{ color: "common.white" }} />}
+          icon={<GitHubIcon sx={{ color: "common.black" }} />}
           link="https://github.com/waylonturbes"
           component="a"
         />
@@ -35,7 +43,7 @@ const DesktopFooter = () => {
       <Divider
         orientation="vertical"
         flexItem
-        sx={{ bgcolor: "common.white" }}
+        sx={{ bgcolor: "common.black" }}
       />
       <List component="div" sx={{ p: "20px" }}>
         <FooterListHeader title="EXPLORE" />
@@ -54,7 +62,7 @@ const DesktopFooter = () => {
       <Divider
         orientation="vertical"
         flexItem
-        sx={{ bgcolor: "common.white" }}
+        sx={{ bgcolor: "common.black" }}
       />
       <List component="div" sx={{ p: "20px" }}>
         <FooterListHeader title="FIND MORE" />
@@ -78,7 +86,7 @@ const DesktopFooter = () => {
       <Divider
         orientation="vertical"
         flexItem
-        sx={{ bgcolor: "common.white" }}
+        sx={{ bgcolor: "common.black" }}
       />
       <Box
         component="div"
@@ -100,7 +108,7 @@ const DesktopFooter = () => {
         </Box>
         <Typography
           variant="body1"
-          sx={{ fontWeight: 500, color: "common.white", textAlign: "center" }}
+          sx={{ fontWeight: 500, color: "common.black", textAlign: "center" }}
         >
           Copyright © 2022 Journaler
         </Typography>

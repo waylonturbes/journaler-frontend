@@ -12,7 +12,14 @@ const MobileFooter = () => {
       component="footer"
       sx={{
         p: "20px",
-        backgroundColor: "primary.dark",
+        backgroundColor: "common.white",
+        boxShadow: "none",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        borderColor: "grey.400",
+        borderBottom: "none",
+        borderLeft: "none",
+        borderRight: "none",
       }}
     >
       <Box
@@ -33,13 +40,13 @@ const MobileFooter = () => {
             <FooterListHeader title="FOLLOW ME" />
             <FooterListItem
               text="LinkedIn"
-              icon={<LinkedInIcon sx={{ color: "common.white" }} />}
+              icon={<LinkedInIcon sx={{ color: "common.black" }} />}
               link="https://www.linkedin.com/in/waylon-turbes/"
               component="a"
             />
             <FooterListItem
               text="GitHub"
-              icon={<GitHubIcon sx={{ color: "common.white" }} />}
+              icon={<GitHubIcon sx={{ color: "common.black" }} />}
               link="https://github.com/waylonturbes"
               component="a"
             />
@@ -82,7 +89,7 @@ const MobileFooter = () => {
             link="https://github.com/waylonturbes/journaler-frontend"
           />
         </List>
-        <Divider flexItem sx={{ bgcolor: "common.white", my: "10px" }} />
+        <Divider flexItem sx={{ bgcolor: "common.black", my: "10px" }} />
         <Box
           component="div"
           sx={{
@@ -113,7 +120,7 @@ const MobileFooter = () => {
             variant="body1"
             sx={{
               fontWeight: 500,
-              color: "common.white",
+              color: "common.black",
               textAlign: "center",
               marginTop: "10px",
             }}
