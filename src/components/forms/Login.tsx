@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
+import { Box, TextField, FormControl, Button } from "@mui/material";
 
 interface Credentials {
   username: string;
@@ -21,7 +21,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Box component="form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">
           <span>* </span>Username:
@@ -52,7 +52,7 @@ const Login: React.FC = () => {
       <div>
         <Button variant="contained">Login</Button>
       </div>
-    </form>
+    </Box>
   );
 };
 

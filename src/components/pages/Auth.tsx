@@ -1,11 +1,15 @@
 import React from "react";
+import { Box } from "@mui/material";
 import { Login } from "../forms";
 
 const Auth: React.FC = () => {
   return (
-    <div>
+    <Box
+      component="div"
+      sx={{ display: "flex", justifyContent: "center", alignContent: "center" }}
+    >
       <Login />
-    </div>
+    </Box>
   );
 };
 
