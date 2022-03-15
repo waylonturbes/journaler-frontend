@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { Link } from "react-router-dom";
 
 interface Credentials {
   email: string;
@@ -109,12 +110,17 @@ const Login: React.FC = () => {
             }
           />
         </FormControl>
-        <div>
-          <Button variant="contained">Login</Button>
-        </div>
-        <p>
-          Don't have an account? <a href="#username">Register here</a>
-        </p>
+        <Button variant="contained" size="large" sx={{ width: "100%" }}>
+          Login
+        </Button>
+        <Box component="div" sx={{ display: "flex", alignSelf: "center" }}>
+          <Typography variant="body2">Don't have an account? </Typography>
+          <Typography variant="body2" sx={{ ml: "3px" }}>
+            <Link style={{ textDecoration: "none" }} to="/register">
+              Register here
+            </Link>
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
