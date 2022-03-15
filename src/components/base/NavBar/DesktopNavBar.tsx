@@ -27,6 +27,7 @@ const DesktopNavBar = (props: NavProps) => {
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
+        boxShadow: 4,
       }}
     >
       <Box component={NavLink as any} to={"/"}>

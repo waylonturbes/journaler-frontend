@@ -15,6 +15,7 @@ const DesktopFooter = () => {
         backgroundColor: "common.white",
         display: "flex",
         justifyContent: "space-evenly",
+        boxShadow: 4,
       }}
     >
       <List component="div" sx={{ p: "20px" }}>

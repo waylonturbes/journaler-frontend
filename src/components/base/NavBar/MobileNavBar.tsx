@@ -49,7 +49,10 @@ const MobileNavBar = (props: NavProps) => {
     };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "common.white" }}>
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "common.white", boxShadow: 4 }}
+    >
       <Toolbar
         sx={{
           py: "10px",
