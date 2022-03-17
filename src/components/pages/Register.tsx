@@ -10,12 +10,16 @@ import {
 import { Link } from "react-router-dom";
 
 interface Credentials {
+  first_name?: string;
+  last_name?: string;
   email: string;
   password: string;
 }
 
 const Register: React.FC = () => {
   const [credentials, setCredentials] = useState<Credentials>({
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
   });
@@ -48,14 +52,34 @@ const Register: React.FC = () => {
           alignContent: "center",
           justifyContent: "space-between",
           minHeight: "300px",
-          maxWidth: "256px",
+          width: { xs: "256px", sm: "300px" },
         }}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h5" sx={{ alignSelf: "center" }}>
+        <Typography variant="h5" sx={{ alignSelf: "center", my: "0.7rem" }}>
           REGISTER
         </Typography>
-        <FormControl sx={{ width: "100%" }} variant="filled">
+        <FormControl sx={{ width: "100%", my: "0.7rem" }} variant="filled">
+          <InputLabel htmlFor="first-name-input">First Name</InputLabel>
+          <FilledInput
+            id="first-name-input"
+            type="text"
+            name="first_name"
+            value={credentials.first_name}
+            onChange={handleInputs}
+          />
+        </FormControl>
+        <FormControl sx={{ width: "100%", my: "0.7rem" }} variant="filled">
+          <InputLabel htmlFor="last-name-input">Last Name</InputLabel>
+          <FilledInput
+            id="last-name-input"
+            type="text"
+            name="last_name"
+            value={credentials.last_name}
+            onChange={handleInputs}
+          />
+        </FormControl>
+        <FormControl sx={{ width: "100%", my: "0.7rem" }} variant="filled">
           <InputLabel htmlFor="email-input">Email</InputLabel>
           <FilledInput
             id="email-input"
@@ -65,7 +89,7 @@ const Register: React.FC = () => {
             onChange={handleInputs}
           />
         </FormControl>
-        <FormControl sx={{ width: "100%" }} variant="filled">
+        <FormControl sx={{ width: "100%", my: "0.7rem" }} variant="filled">
           <InputLabel htmlFor="password-input">Password</InputLabel>
           <FilledInput
             id="password-input"
@@ -75,10 +99,17 @@ const Register: React.FC = () => {
             onChange={handleInputs}
           />
         </FormControl>
-        <Button variant="contained" size="large" sx={{ width: "100%" }}>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ width: "100%", my: "0.7rem" }}
+        >
           Register
         </Button>
-        <Box component="div" sx={{ display: "flex", alignSelf: "center" }}>
+        <Box
+          component="div"
+          sx={{ display: "flex", alignSelf: "center", my: "0.7rem" }}
+        >
           <Typography variant="body2">Already have an account?</Typography>
           <Typography variant="body2" sx={{ ml: "3px" }}>
             <Link style={{ textDecoration: "none" }} to="/login">
