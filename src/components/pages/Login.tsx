@@ -67,7 +67,7 @@ const Login: React.FC = () => {
           alignContent: "center",
           justifyContent: "space-between",
           minHeight: "300px",
-          width: { xs: "256px", sm: "300px" },
+          width: { xs: "256px", sm: "340px" },
         }}
         onSubmit={handleSubmit}
       >
