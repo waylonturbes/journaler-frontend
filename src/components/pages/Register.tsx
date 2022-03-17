@@ -56,10 +56,10 @@ const Register: React.FC = () => {
         }}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h5" sx={{ alignSelf: "center", my: "0.7rem" }}>
+        <Typography variant="h5" sx={{ alignSelf: "center", my: "0.6rem" }}>
           REGISTER
         </Typography>
-        <FormControl sx={{ width: "100%", my: "0.7rem" }} variant="filled">
+        <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
           <InputLabel htmlFor="first-name-input">First Name</InputLabel>
           <FilledInput
             id="first-name-input"
@@ -69,7 +69,7 @@ const Register: React.FC = () => {
             onChange={handleInputs}
           />
         </FormControl>
-        <FormControl sx={{ width: "100%", my: "0.7rem" }} variant="filled">
+        <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
           <InputLabel htmlFor="last-name-input">Last Name</InputLabel>
           <FilledInput
             id="last-name-input"
@@ -79,7 +79,7 @@ const Register: React.FC = () => {
             onChange={handleInputs}
           />
         </FormControl>
-        <FormControl sx={{ width: "100%", my: "0.7rem" }} variant="filled">
+        <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
           <InputLabel htmlFor="email-input">Email</InputLabel>
           <FilledInput
             id="email-input"
@@ -89,7 +89,7 @@ const Register: React.FC = () => {
             onChange={handleInputs}
           />
         </FormControl>
-        <FormControl sx={{ width: "100%", my: "0.7rem" }} variant="filled">
+        <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
           <InputLabel htmlFor="password-input">Password</InputLabel>
           <FilledInput
             id="password-input"
@@ -102,13 +102,13 @@ const Register: React.FC = () => {
         <Button
           variant="contained"
           size="large"
-          sx={{ width: "100%", my: "0.7rem" }}
+          sx={{ width: "100%", my: "0.6rem", py: "0.8rem" }}
         >
           Register
         </Button>
         <Box
           component="div"
-          sx={{ display: "flex", alignSelf: "center", my: "0.7rem" }}
+          sx={{ display: "flex", alignSelf: "center", my: "0.6rem" }}
         >
           <Typography variant="body2">Already have an account?</Typography>
           <Typography variant="body2" sx={{ ml: "3px" }}>
