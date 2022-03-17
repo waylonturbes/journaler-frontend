@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import { About, Home, Login } from "./components/pages";
+import { About, Home, Login, Register } from "./components/pages";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +14,7 @@ const App: React.FC = () => {
           <Route path="contact" />
           <Route path="dashboard" />
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Route>
       </Routes>
     </Box>
