@@ -3,27 +3,25 @@ import {
   Box,
   InputLabel,
   FilledInput,
-  InputAdornment,
-  IconButton,
   FormControl,
   Button,
   Typography,
 } from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Link } from "react-router-dom";
 
 interface Credentials {
+  first_name?: string;
+  last_name?: string;
   email: string;
   password: string;
-  showPassword: boolean;
 }
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   const [credentials, setCredentials] = useState<Credentials>({
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
-    showPassword: false,
   });
 
   const handleInputs = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,19 +31,6 @@ const Login: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Call DB here
-  };
-
-  const handleClickShowPassword = () => {
-    setCredentials({
-      ...credentials,
-      showPassword: !credentials.showPassword,
-    });
-  };
-
-  const handleMouseDownPassword = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    event.preventDefault();
   };
 
   return (
@@ -72,8 +57,43 @@ const Login: React.FC = () => {
         onSubmit={handleSubmit}
       >
         <Typography variant="h5" sx={{ alignSelf: "center", my: "0.6rem" }}>
-          LOGIN
+          REGISTER
         </Typography>
+        <Box
+          component="div"
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            justifyContent: { xs: "center", sm: "space-between" },
+          }}
+        >
+          <FormControl
+            sx={{ my: "0.6rem", mr: { xs: "0rem", sm: "0.3rem" } }}
+            variant="filled"
+          >
+            <InputLabel htmlFor="first-name-input">First Name</InputLabel>
+            <FilledInput
+              id="first-name-input"
+              type="text"
+              name="first_name"
+              value={credentials.first_name}
+              onChange={handleInputs}
+            />
+          </FormControl>
+          <FormControl
+            sx={{ my: "0.6rem", ml: { xs: "0rem", sm: "0.3rem" } }}
+            variant="filled"
+          >
+            <InputLabel htmlFor="last-name-input">Last Name</InputLabel>
+            <FilledInput
+              id="last-name-input"
+              type="text"
+              name="last_name"
+              value={credentials.last_name}
+              onChange={handleInputs}
+            />
+          </FormControl>
+        </Box>
         <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
           <InputLabel htmlFor="email-input">Email</InputLabel>
           <FilledInput
@@ -88,43 +108,27 @@ const Login: React.FC = () => {
           <InputLabel htmlFor="password-input">Password</InputLabel>
           <FilledInput
             id="password-input"
-            type={credentials.showPassword ? "text" : "password"}
+            type="text"
             name="password"
             value={credentials.password}
             onChange={handleInputs}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {credentials.showPassword ? (
-                    <VisibilityOff />
-                  ) : (
-                    <Visibility />
-                  )}
-                </IconButton>
-              </InputAdornment>
-            }
           />
         </FormControl>
         <Button
           variant="contained"
           size="large"
-          sx={{ width: "100%", py: "0.8rem", my: "0.6rem" }}
+          sx={{ width: "100%", my: "0.6rem", py: "0.8rem" }}
         >
-          Login
+          Register
         </Button>
         <Box
           component="div"
           sx={{ display: "flex", alignSelf: "center", my: "0.6rem" }}
         >
-          <Typography variant="body2">Don't have an account? </Typography>
+          <Typography variant="body2">Already have an account?</Typography>
           <Typography variant="body2" sx={{ ml: "3px" }}>
-            <Link style={{ textDecoration: "none" }} to="/register">
-              Register here
+            <Link style={{ textDecoration: "none" }} to="/login">
+              Login here
             </Link>
           </Typography>
         </Box>
@@ -133,4 +137,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;
