@@ -67,14 +67,14 @@ const Login: React.FC = () => {
           alignContent: "center",
           justifyContent: "space-between",
           minHeight: "300px",
-          maxWidth: "256px",
+          width: { xs: "256px", sm: "300px" },
         }}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h5" sx={{ alignSelf: "center" }}>
+        <Typography variant="h5" sx={{ alignSelf: "center", my: "0.6rem" }}>
           LOGIN
         </Typography>
-        <FormControl sx={{ width: "100%" }} variant="filled">
+        <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
           <InputLabel htmlFor="email-input">Email</InputLabel>
           <FilledInput
             id="email-input"
@@ -84,7 +84,7 @@ const Login: React.FC = () => {
             onChange={handleInputs}
           />
         </FormControl>
-        <FormControl sx={{ width: "100%" }} variant="filled">
+        <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
           <InputLabel htmlFor="password-input">Password</InputLabel>
           <FilledInput
             id="password-input"
@@ -110,10 +110,17 @@ const Login: React.FC = () => {
             }
           />
         </FormControl>
-        <Button variant="contained" size="large" sx={{ width: "100%" }}>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ width: "100%", py: "0.8rem", my: "0.6rem" }}
+        >
           Login
         </Button>
-        <Box component="div" sx={{ display: "flex", alignSelf: "center" }}>
+        <Box
+          component="div"
+          sx={{ display: "flex", alignSelf: "center", my: "0.6rem" }}
+        >
           <Typography variant="body2">Don't have an account? </Typography>
           <Typography variant="body2" sx={{ ml: "3px" }}>
             <Link style={{ textDecoration: "none" }} to="/register">
