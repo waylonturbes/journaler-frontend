@@ -52,33 +52,48 @@ const Register: React.FC = () => {
           alignContent: "center",
           justifyContent: "space-between",
           minHeight: "300px",
-          width: { xs: "256px", sm: "300px" },
+          width: { xs: "256px", sm: "340px" },
         }}
         onSubmit={handleSubmit}
       >
         <Typography variant="h5" sx={{ alignSelf: "center", my: "0.6rem" }}>
           REGISTER
         </Typography>
-        <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
-          <InputLabel htmlFor="first-name-input">First Name</InputLabel>
-          <FilledInput
-            id="first-name-input"
-            type="text"
-            name="first_name"
-            value={credentials.first_name}
-            onChange={handleInputs}
-          />
-        </FormControl>
-        <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
-          <InputLabel htmlFor="last-name-input">Last Name</InputLabel>
-          <FilledInput
-            id="last-name-input"
-            type="text"
-            name="last_name"
-            value={credentials.last_name}
-            onChange={handleInputs}
-          />
-        </FormControl>
+        <Box
+          component="div"
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            justifyContent: { xs: "center", sm: "space-between" },
+          }}
+        >
+          <FormControl
+            sx={{ my: "0.6rem", mr: { xs: "0rem", sm: "0.3rem" } }}
+            variant="filled"
+          >
+            <InputLabel htmlFor="first-name-input">First Name</InputLabel>
+            <FilledInput
+              id="first-name-input"
+              type="text"
+              name="first_name"
+              value={credentials.first_name}
+              onChange={handleInputs}
+            />
+          </FormControl>
+          <FormControl
+            sx={{ my: "0.6rem", ml: { xs: "0rem", sm: "0.3rem" } }}
+            variant="filled"
+          >
+            <InputLabel htmlFor="last-name-input">Last Name</InputLabel>
+            <FilledInput
+              id="last-name-input"
+              type="text"
+              name="last_name"
+              value={credentials.last_name}
+              onChange={handleInputs}
+            />
+          </FormControl>
+        </Box>
         <FormControl sx={{ width: "100%", my: "0.6rem" }} variant="filled">
           <InputLabel htmlFor="email-input">Email</InputLabel>
           <FilledInput
