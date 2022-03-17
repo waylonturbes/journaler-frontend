@@ -69,7 +69,7 @@ const DesktopFooter = () => {
         <FooterListItem
           text="Register"
           component={NavLink as any}
-          route={"/auth/register"}
+          route={"/register"}
         />
         {/* Dashboard will only be visible when logged in */}
         <FooterListItem
