@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Paper } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Link } from "react-router-dom";
+import JournalImage from "../../assets/journal.jpg";
 
 const Home: React.FC = () => {
   return (
@@ -69,10 +70,28 @@ const Home: React.FC = () => {
           flexDirection: "column",
           flex: "auto",
           p: "40px",
+          alignContent: "center",
+          justifyContent: "center",
           maxWidth: { xs: "100%", sm: "100%", md: "50%" },
         }}
       >
-        CONTENT
+        <Paper
+          component="div"
+          elevation={3}
+          sx={{ p: "20px", borderRadius: "12px" }}
+        >
+          <Box
+            component="img"
+            sx={{
+              width: "100%",
+              aspectRatio: { xs: "auto", sm: "auto", md: "1/1" },
+              borderRadius: "4px",
+              boxShadow: 3,
+            }}
+            src={JournalImage}
+            alt="An open journal with a drawing of an ocean wave on the left page"
+          ></Box>
+        </Paper>
       </Box>
     </Box>
   );
