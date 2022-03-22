@@ -3,10 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
-import { Box } from "@mui/material";
 import { theme } from "./styles/theme/themeOverride";
-import NavBar from "./components/base/NavBar";
-import Footer from "./components/base/Footer";
 
 // Style Sheets
 import "@fontsource/roboto/300.css";
@@ -19,20 +16,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <Box
-          sx={{
-            minHeight: "100vh",
-            maxWidth: "1200px",
-            margin: "0 auto",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
-          <NavBar />
-          <App />
-          <Footer />
-        </Box>
+        <App />
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,

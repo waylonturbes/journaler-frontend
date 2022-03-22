@@ -89,7 +89,7 @@ const MobileFooter = () => {
             link="https://github.com/waylonturbes/journaler-frontend"
           />
         </List>
-        <Divider flexItem sx={{ bgcolor: "common.black", my: "10px" }} />
+        <Divider flexItem sx={{ bgcolor: "grey.400", my: "10px" }} />
         <Box
           component="div"
           sx={{

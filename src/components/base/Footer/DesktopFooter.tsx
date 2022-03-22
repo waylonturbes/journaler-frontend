@@ -40,11 +40,7 @@ const DesktopFooter = () => {
           component="a"
         />
       </List>
-      <Divider
-        orientation="vertical"
-        flexItem
-        sx={{ bgcolor: "common.black" }}
-      />
+      <Divider orientation="vertical" flexItem sx={{ bgcolor: "grey.400" }} />
       <List component="div" sx={{ p: "20px" }}>
         <FooterListHeader title="EXPLORE" />
         <FooterListItem text="Home" component={NavLink as any} route={"/"} />
@@ -59,11 +55,7 @@ const DesktopFooter = () => {
           route={"/contact"}
         />
       </List>
-      <Divider
-        orientation="vertical"
-        flexItem
-        sx={{ bgcolor: "common.black" }}
-      />
+      <Divider orientation="vertical" flexItem sx={{ bgcolor: "grey.400" }} />
       <List component="div" sx={{ p: "20px" }}>
         <FooterListHeader title="FIND MORE" />
         <FooterListItem
@@ -83,11 +75,7 @@ const DesktopFooter = () => {
           link="https://github.com/waylonturbes/journaler-frontend"
         />
       </List>
-      <Divider
-        orientation="vertical"
-        flexItem
-        sx={{ bgcolor: "common.black" }}
-      />
+      <Divider orientation="vertical" flexItem sx={{ bgcolor: "grey.400" }} />
       <Box
         component="div"
         sx={{
