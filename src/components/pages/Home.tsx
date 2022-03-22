@@ -10,7 +10,7 @@ const Home: React.FC = () => {
       sx={{
         display: "flex",
         flex: "auto",
-        flexDirection: { sm: "column", md: "row" },
+        flexDirection: { xs: "column", sm: "column", md: "row" },
         justifyContent: "center",
         alignContent: "center",
         p: "20px",
@@ -25,24 +25,37 @@ const Home: React.FC = () => {
           alignContent: "center",
           justifyContent: "center",
           p: "40px",
+          maxWidth: { xs: "100%", sm: "100%", md: "50%" },
         }}
       >
-        <Typography variant="h2" sx={{ fontWeight: 500, marginBottom: "20px" }}>
-          Write journals
-          <br />
-          digitally today!
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: 500,
+            marginBottom: "30px",
+            textAlign: { xs: "center", sm: "center", md: "start" },
+          }}
+        >
+          Write journals digitally today!
         </Typography>
         <Box component="div" sx={{ justifySelf: "center" }}>
           <Box
             component={Link as any}
             to={"/register"}
-            sx={{ textDecoration: "none" }}
+            sx={{
+              textDecoration: "none",
+              display: "flex",
+              justifyContent: { xs: "center", sm: "center", md: "flex-start" },
+            }}
           >
             <Button
               variant="contained"
               size="large"
               endIcon={<ArrowForwardIosIcon sx={{ height: "14px" }} />}
-              sx={{ py: "10px" }}
+              sx={{
+                py: "10px",
+                width: { xs: "85%", sm: "60%", md: "auto" },
+              }}
             >
               Get Started
             </Button>
@@ -56,6 +69,7 @@ const Home: React.FC = () => {
           flexDirection: "column",
           flex: "auto",
           p: "40px",
+          maxWidth: { xs: "100%", sm: "100%", md: "50%" },
         }}
       >
         CONTENT
